@@ -6,17 +6,20 @@ import java.util.ArrayList;
 public class PointOfSale {
   private ProductCatalog productCatalog;
   private ArrayList<Sale> sales;
+  private CashBox cashBox;
   private int idLastSale = 0;
   private final String FILE_NAME = "src/pos/catalog.txt";
 
   public PointOfSale() {
     productCatalog = new ProductCatalog(FILE_NAME);
     sales = new ArrayList<>();
+    cashBox = new CashBox();
+    cashBox.cashBoxAmounts();
   }
 
   public int makeNewSale() {
     idLastSale++;
-    Sale newSale = new Sale(idLastSale);
+    Sale newSale = new Sale(idLastSale, cashBox);
     sales.add(newSale);
     return idLastSale;
   }

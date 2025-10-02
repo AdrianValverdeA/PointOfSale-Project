@@ -8,12 +8,14 @@ import java.util.ArrayList;
 public class Sale {
   boolean isPaid = false;
   private int id;
+  private CashBox cashBox;
   private ArrayList<SaleLineItem> saleLineItems = new ArrayList<>();
   private LocalDateTime dateTime = LocalDateTime.now();
   private Payment payment;  // note : supertype
 
-  public Sale(int id) {
+  public Sale(int id, CashBox cashBox) {
     this.id = id;
+    this.cashBox = cashBox;
   }
 
   public int getId() {
@@ -64,7 +66,7 @@ public class Sale {
 
   public void payCash(double amountHanded) {
     assert !isPaid : "sale " + id + " has already been paid";
-    payment = new PaymentInCash(amountHanded, total());
+    payment = new PaymentInCash(amountHanded, total(), cashBox);
     isPaid = true;
   }
 

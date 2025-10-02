@@ -1,6 +1,6 @@
 package ui;
 
-import pos.PointOfSale;
+import pos_creditcard.PointOfSale;
 
 import javax.swing.*;
 import java.awt.*;

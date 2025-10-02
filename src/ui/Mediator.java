@@ -1,6 +1,6 @@
 package ui;
 
-import pos.PointOfSale;
+import pos_creditcard.PointOfSale;
 
 import javax.swing.*;
 
@@ -55,8 +55,8 @@ public class Mediator {
       if (currentTableListener.hasASale()) {
         int id = currentTableListener.getSaleId();
         if (!pointOfSale.isSalePaid(id) && (paidAmount > 0)) {
-          pointOfSale.payOneSale(id, paidAmount);
-          pointOfSale.printChangeOfSale(id);
+          pointOfSale.payOneSaleCash(id, paidAmount);
+          pointOfSale.printPayment(id);
           paidAmount = 0;
           textAmount.setText("0.0");
         } else {
