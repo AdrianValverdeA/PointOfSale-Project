@@ -15,7 +15,7 @@ public class ChangeRandom extends ChangeCash {
       HashMap<Double, Integer> cb = cashBox.getCashbox();
       int i = (int) (Math.random() * 11);
       change = Math.round(change * 100.0) / 100.0;
-      if (change >= keys[i]) // faltaria comprovacio caixa, pero surt un comentari
+      if (change >= keys[i]) // comprovació amb comentari
       {
         if (cb.get(keys[i]) + changes[i] > 0)
         {

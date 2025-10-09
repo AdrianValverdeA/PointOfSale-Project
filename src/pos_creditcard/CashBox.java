@@ -44,7 +44,7 @@ public class CashBox {
         cashbox.replace(keys[i], cashbox.get(keys[i]) + changes[i]);
         if (cashbox.get(keys[i]) < 0)
         {
-          System.out.println("Estas cooked con el cambio para " + keys[i]);
+          System.out.println("No tienes monedas suficientes de " + keys[i]);
         }
 
       }
@@ -60,10 +60,5 @@ public class CashBox {
 
     }
 
-    /*for (HashMap.Entry<Double, Integer> entry : cashbox.entrySet())
-    {
-      System.out.println(entry.getValue() + " de " + entry.getKey() + " €");
-    }
-    */
   }
 }
